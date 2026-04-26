@@ -10,6 +10,16 @@ typedef struct {
     uint8_t flags;    // Flags register
     uint16_t SP;      // Stack Pointer
     uint8_t B, C, D, E, H, L;
+    uint8_t ports[256]; // 8-bit I/O address space
+    uint8_t interrupt_enabled;
+    uint8_t interrupt_mask_5_5;
+    uint8_t interrupt_mask_6_5;
+    uint8_t interrupt_mask_7_5;
+    uint8_t interrupt_pending_5_5;
+    uint8_t interrupt_pending_6_5;
+    uint8_t interrupt_pending_7_5;
+    uint8_t serial_input_data;
+    uint8_t serial_output_data;
 } CPU;
 
 uint8_t fetch(CPU *cpu);

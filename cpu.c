@@ -95,6 +95,10 @@ uint8_t get_sign_flag(CPU *cpu) {
     return get_flag(cpu, FLAG_S);
 }
 
+void set_sign_flag(CPU *cpu, uint8_t value) {
+    set_flag(cpu, FLAG_S, value);
+}
+
 void set_ZSP(CPU *cpu, uint8_t result) {
     // Zero
     if (result == 0) cpu->flags |= FLAG_Z;
